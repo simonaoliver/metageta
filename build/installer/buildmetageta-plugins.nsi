@@ -20,8 +20,8 @@
     !define /date YEAR "%Y"
 
     !define APP_NAME "MetaGETA Plugins"
-    !define COMP_NAME "Department of Sustainability, Environment, Water, Population and Communities"
-    !define WEB_SITE "http://code.google.com/p/metageta"
+    !define COMP_NAME "Department of Environment"
+    !define WEB_SITE "http://environment.gov.au"
     !define COPYRIGHT "${COMP_NAME} © ${YEAR}"
     !define DESCRIPTION "MetaGETA plugin installer"
     !define MUI_WELCOMEFINISHPAGE_BITMAP "graphics\installer.bmp"
@@ -46,9 +46,9 @@
     !define MULTIUSER_INSTALLMODEPAGE_TEXT_TOP "MetaGETA is currently installed in two locations - for any one using this computer and just for you. \
                                                 Please select which of these MetaGETA locations you wish to install the plugins to:"
 
-    !define ECW_DESCRIPTION_TEXT "Uses the Intergraph ECW JPEG2000 Codec SDK v5.0"
+    !define ECW_DESCRIPTION_TEXT "Uses the Erdas ECW JPEG2000 Codec SDK v5.1"
 
-    !define SID_DESCRIPTION_TEXT "Uses the LizardTech GeoExpress 7 DSDK"
+    !define SID_DESCRIPTION_TEXT "Uses the LizardTech GeoExpress DSDK"
 
     !define MUI_ABORTWARNING_TEXT "Are you sure you wish to abort the MetaGETA plugins installation?"
 
@@ -126,26 +126,22 @@
         File  "${APP_DIR}\metageta\metageta\formats\ecw.py"
         File  "${APP_DIR}\metageta\metageta\formats\ecwp.py"
         File  "${APP_DIR}\metageta\metageta\formats\jp2.py"
-        setOutPath "$INSTDIR\bin\gdal"
-        #File  "${BIN_DIR}\gdal\ecw-eula.txt"
-        File  "licenses\ecw-eula.txt"
-        setOutPath "$INSTDIR\bin\gdal\bin"
-        #File  "${BIN_DIR}\gdal\bin\libecwj2.dll"
-        File  "${BIN_DIR}\gdal\bin\NCSEcw.dll"
-        setOutPath "$INSTDIR\bin\gdal\bin\plugins"
-        File  "${BIN_DIR}\gdal\bin\plugins\gdal_ECW_JP2ECW.dll"
+        setOutPath "$INSTDIR\bin\python27\Lib\site-packages\osgeo"
+        File  "${BIN_DIR}\python27\Lib\site-packages\osgeo\NCSEcw.dll"
+        setOutPath "$INSTDIR\bin\python27\Lib\site-packages\osgeo\gdalplugins"
+        File  "${BIN_DIR}\python27\Lib\site-packages\osgeo\gdalplugins\gdal_ECW_JP2ECW.dll"
+        setOutPath "$INSTDIR\bin\python27\Lib\site-packages\osgeo\license"
+        File  "${BIN_DIR}\python27\Lib\site-packages\osgeo\license\ECW5License.rtf"
 
     sectionEnd
     section /o "MrSID" SEC02
 
-        setOutPath "$INSTDIR\bin\gdal"
-        #File  "${BIN_DIR}\gdal\mrsid-eula.txt"
-        File  "licenses\mrsid-eula.txt"
-        setOutPath "$INSTDIR\bin\gdal\bin"
-        File  "${BIN_DIR}\gdal\bin\lti_dsdk.dll"
-        File  "${BIN_DIR}\gdal\bin\lti_dsdk_cdll.dll"
-        setOutPath "$INSTDIR\bin\gdal\bin\plugins"
-        File  "${BIN_DIR}\gdal\bin\plugins\gdal_MrSID.dll"
+        setOutPath "$INSTDIR\bin\python27\Lib\site-packages\osgeo"
+        File  "${BIN_DIR}\python27\Lib\site-packages\osgeo\lti_dsdk_9.0.dll"
+        File  "${BIN_DIR}\python27\Lib\site-packages\osgeo\lti_lidar_dsdk_1.1.dll"
+        File  "${BIN_DIR}\python27\Lib\site-packages\osgeo\tbb.dll"
+        setOutPath "$INSTDIR\bin\python27\Lib\site-packages\osgeo\gdalplugins"
+        File  "${BIN_DIR}\python27\Lib\site-packages\osgeo\gdalplugins\gdal_MrSID.dll"
 
     sectionEnd
 

@@ -20,8 +20,8 @@
     !define /date YEAR "%Y"
 
     !define APP_NAME "MetaGETA"
-    !define COMP_NAME "Department of Sustainability, Environment, Water, Population and Communities"
-    !define WEB_SITE "http://code.google.com/p/metageta"
+    !define COMP_NAME "Department of Environment"
+    !define WEB_SITE "http://environment.gov.au"
     !define COPYRIGHT "${COMP_NAME} © ${YEAR}"
     !define DESCRIPTION "MetaGETA installer (Metadata Gathering, Extraction and Transformation Application)"
     !define LICENSE_TXT "licenses\license.rtf"
@@ -109,7 +109,6 @@
         File "${MUI_ICON}"
         ${GetFileName} "${BIN_DIR}" $R0
         SetOutPath $INSTDIR\$R0
-        File /r  ${EXCLUDE} "${BIN_DIR}\gdal"
         File /r  ${EXCLUDE} "${BIN_DIR}\Python27"
         SetOutPath "$INSTDIR"
         WriteUninstaller "$INSTDIR\Uninstall.exe"

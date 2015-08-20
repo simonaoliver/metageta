@@ -31,10 +31,10 @@ tag_new_release.bat
 gdal_ECW_JP2ECW.dll*
 NCSEcw.dll
 *-eula.txt
+ECW5License.rtf
 ecw*.py
-ecw*.py
-lti_dsdk.dll
-lti_lidar_dsdk.dll
-lti_dsdk_cdll.dll
-gdal_MrSID.dll
 jp2.py
+lti_*.dll
+tbb.dll
+gdal_MrSID.dll
+MRSIDLicense.rtf

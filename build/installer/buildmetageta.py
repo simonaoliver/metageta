@@ -180,7 +180,7 @@ def main(vers=None):
 
         ##########################################################
         print 'Compiling NSIS installer'
-        setup=DOWNLOAD_DIR+r'\metageta-%s-x86-setup.exe'%outfile
+        setup=DOWNLOAD_DIR+r'\metageta-%s-x86_64-setup.exe'%outfile
         cmd=r'makensis /V2 /DEXCLUDE=%s /DAPP_DIR=%s /DBIN_DIR=%s /DOUTPATH=%s /DVERSION=%s /DDISPLAY_VERSION="%s" buildmetageta.nsi'%('"/x %s"'%' /x '.join(excluded_files),tmp,BIN_DIR,setup,version,displayversion)
         exit_code,stdout,stderr=runcmd(cmd)
         if exit_code != 0:
