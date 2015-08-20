@@ -194,7 +194,7 @@ def main(vers=None):
             raw_input('Press enter to exit.')
             sys.exit(exit_code)
 
-        pluginsetup=DOWNLOAD_DIR+r'\metageta-%s-plugins-x86-setup.exe'%outfile
+        pluginsetup=DOWNLOAD_DIR+r'\metageta-%s-plugins-x86_64-setup.exe'%outfile
         cmd=r'makensis /V2 /DAPP_DIR=%s /DBIN_DIR=%s /DOUTPATH=%s /DVERSION=%s /DDISPLAY_VERSION="%s" buildmetageta-plugins.nsi'%(tmp,BIN_DIR,pluginsetup,version,displayversion)
         exit_code,stdout,stderr=runcmd(cmd)
         if exit_code != 0:
@@ -227,10 +227,10 @@ def main(vers=None):
         zout.close()
 
         #With installer
-        zout=zip.ZipFile(fout.replace('.zip','-x86-setup.zip'),'w',zip.ZIP_DEFLATED)
+        zout=zip.ZipFile(fout.replace('.zip','-x86_64-setup.zip'),'w',zip.ZIP_DEFLATED)
         zout.write(setup, os.path.basename(setup))
         zout.close()
-        zout=zip.ZipFile(fout.replace('.zip','-plugins-x86-setup.zip'),'w',zip.ZIP_DEFLATED)
+        zout=zip.ZipFile(fout.replace('.zip','-plugins-x86_64-setup.zip'),'w',zip.ZIP_DEFLATED)
         zout.write(pluginsetup, os.path.basename(pluginsetup))
         zout.close()
 
